@@ -1,7 +1,6 @@
 import React from 'react';
 import { Connection } from '@/utils/types';
 import Avatar from '../ui/avatar';
-import Button from '../ui/button';
 import { Icons } from '@/utils/icons';
 
 interface ConnectionCardProps {
@@ -24,7 +23,8 @@ const ConnectionCard: React.FC<ConnectionCardProps> = ({ connection, onConnect }
           </p>
         )}
         <button
-          className='flex w-1/3 items-center justify-center rounded-3xl border border-gray-500 bg-white px-4 py-2 font-medium gap-1'
+          className='flex w-1/3 items-center justify-center rounded-3xl border border-gray-500 bg-white px-4 py-2 font-medium gap-1 cursor-pointer'
+          onClick={() => onConnect}
         >
           <Icons.USERS size={18}/>
           Connect

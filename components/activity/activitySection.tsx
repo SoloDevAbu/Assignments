@@ -1,6 +1,5 @@
 import React from 'react';
 import { Post as PostType, ActivityTabType } from '@/utils/types';
-import Post from '../post';
 import ActivityCard from './activityCard';
 import ActivityTabs from './activityTabs';
 
