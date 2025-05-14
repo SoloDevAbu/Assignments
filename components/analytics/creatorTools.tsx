@@ -1,3 +1,5 @@
+import { Icons } from "@/utils/icons"
+
 export const CreatorTools = () => {
     return (
         <div className="flex flex-col items-start gap-5 bg-white px-6 py-4 rounded-xl shadow-sm">
@@ -9,7 +11,7 @@ export const CreatorTools = () => {
                 <div className="flex justify-between items-center w-full">
                     <h3>Tayog Live</h3>
                     <div className="flex gap-2 items-center">
-                        <p>i</p>
+                        <Icons.INFO size={22} color="gray"/>
                         <p>Learn more</p>
                         <p>&gt;</p>
                     </div>
@@ -20,7 +22,7 @@ export const CreatorTools = () => {
                 <div className="flex justify-between items-center w-full">
                     <h3>Newsletters</h3>
                     <div className="flex gap-2 items-center">
-                        <p>i</p>
+                        <Icons.CHECKED size={22} color="green"/>
                         <p>Available</p>
                         <p>&gt;</p>
                     </div>
@@ -31,7 +33,7 @@ export const CreatorTools = () => {
                 <div className="flex justify-between items-center w-full">
                     <h3>Follow link</h3>
                     <div className="flex gap-2 items-center">
-                        <p>i</p>
+                        <Icons.CHECKED size={22} color="green"/>
                         <p>Available</p>
                         <p>&gt;</p>
                     </div>
