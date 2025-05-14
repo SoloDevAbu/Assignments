@@ -5,7 +5,7 @@ import { WeeklySharingCard } from "@/components/analytics/weeklySharing";
 
 export default function Dashboard() {
     return (
-        <div className="flex flex-col gap-4 mx-10 my-6">
+        <div className="flex flex-col gap-4 mx-8 my-6 md:mx-16 md:max-w-3/5">
             <AnalyticsHeader />
             <Analytics />
             <WeeklySharingCard />
