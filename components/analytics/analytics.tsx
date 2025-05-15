@@ -1,18 +1,41 @@
 import { AnalyticsCard } from "@/components/ui/analyticsCard"
+import { Icons } from "@/utils/icons"
+import { cn } from "@/utils/helpers"
+import { BaseComponentProps } from "@/utils/types"
+import { analyticsData } from "@/utils/mockData";
 
-export const Analytics = () => {
-    return (
-        <div className="flex flex-col items-start gap-4 bg-white px-6 py-4 rounded-xl shadow-sm">
-            <div className="flex gap-2 items-center">
-                <h1 className="text-xl font-medium">Analytics</h1>
-                <p> ? </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4 w-full">
-                <AnalyticsCard total={140} title="Post impression" growth={61} description="past 7 days"/>
-                <AnalyticsCard total={23} title="Followers" growth={6} description="past 7 days"/>
-                <AnalyticsCard total={28} title="Profile viewers" growth={34} description="past 90 days"/>
-                <AnalyticsCard total={10} title="Search appearances" growth={5} description="past 7 days"/>
-            </div>
-        </div>
-    )
+interface AnalyticsProps extends BaseComponentProps {
+  data?: {
+    postImpressions: number;
+    followers: number;
+    profileViews: number;
+    searchAppearances: number;
+  };
+}
+
+export const Analytics = ({ className }: AnalyticsProps) => {
+
+  return (
+    <div className={cn(
+      "flex flex-col items-start gap-4 bg-white px-6 py-4 rounded-xl shadow-sm",
+      className
+    )}>
+      <div className="flex gap-2 items-center">
+        <h1 className="text-xl font-medium">Analytics</h1>
+        <Icons.INFO className="text-gray-500 h-5 w-5" />
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+        {analyticsData.map((item, index) => (
+          <AnalyticsCard
+            key={index}
+            total={item.total}
+            title={item.title}
+            growth={item.growth}
+            description={item.description}
+            icon={item.icon}
+          />
+        ))}
+      </div>
+    </div>
+  )
 }

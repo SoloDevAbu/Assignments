@@ -1,3 +1,5 @@
+import { LucideIcon } from "lucide-react";
+
 export interface User {
   id: string;
   name: string;
@@ -28,4 +30,59 @@ export interface Connection {
   company?: string;
 }
 
+export interface Analytics {
+  postImpressions: {
+    total: number;
+    title: string,
+    growth: number;
+    description: Date;
+    icon: any
+  };
+  followers: {
+    total: number;
+    title: string,
+    growth: number;
+    description: Date;
+    icon: any
+  };
+  profileViews: {
+    total: number;
+    title: string,
+    growth: number;
+    description: Date;
+    icon: any
+  };
+  searchAppearances: {
+    total: number;
+    title: string,
+    growth: number;
+    description: Date;
+    icon: any
+  };
+}
+
+export interface CreatorTool {
+  id: string;
+  name: string;
+  status: 'available' | 'coming_soon' | 'learn_more';
+  info?: string;
+}
+
+export interface BaseComponentProps {
+  className?: string;
+  children?: React.ReactNode;
+}
+
+export interface WithCompact {
+  isCompact?: boolean;
+}
+
 export type ActivityTabType = 'Posts' | 'Videos' | 'Images' | 'Reactions';
+
+export interface AnalyticsCardProps extends BaseComponentProps {
+  total: number;
+  title: string;
+  growth: number;
+  description: string;
+  icon?: LucideIcon;
+}

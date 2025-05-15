@@ -11,6 +11,7 @@ import { Info } from "lucide-react";
 import { CircleCheckBig } from "lucide-react";
 import { Eye } from "lucide-react";
 import { ArrowRight } from "lucide-react";
+import { X } from "lucide-react";
 
 export const Icons = {
     EARTH: Earth,
@@ -25,5 +26,6 @@ export const Icons = {
     INFO: Info,
     CHECKED: CircleCheckBig,
     EYE: Eye,
-    ARROW_RIGHT: ArrowRight
+    ARROW_RIGHT: ArrowRight,
+    CLOSE: X
 }

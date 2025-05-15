@@ -1,6 +1,7 @@
 import { User, Post, Connection } from './types';
 import profileImage from '@/public/profile.jpg';
 import imageData from '@/public/image.png';
+import { Icons } from './icons';
 
 export const currentUser: User = {
   id: '1',
@@ -87,3 +88,34 @@ export const suggestedConnections: Connection[] = [
     school: 'your school',
   },
 ];
+
+export const analyticsData = [
+    {
+      total: 140,
+      title: "Post impressions",
+      growth: 61,
+      description: "past 7 days",
+      icon: Icons.ACTIVITY
+    },
+    {
+      total: 23,
+      title: "Followers",
+      growth: 6,
+      description: "past 7 days",
+      icon: Icons.USERS
+    },
+    {
+      total: 28,
+      title: "Profile viewers",
+      growth: 34,
+      description: "past 90 days",
+      icon: Icons.EYE
+    },
+    {
+      total: 10,
+      title: "Search appearances",
+      growth: -5,
+      description: "past 7 days",
+      icon: Icons.SEARCH
+    }
+  ];

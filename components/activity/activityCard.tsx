@@ -3,24 +3,18 @@ import { Icons } from "@/utils/icons";
 import Image from "next/image";
 import imageContent from '@/public/image.png'
 import { Post as PostType } from '@/utils/types';
-import { useState } from "react";
+import { usePostInteraction } from "@/hooks/usePostInteraction";
+import { cn } from "@/utils/helpers";
+import { Button } from "../ui/button/Button";
+import { IconButton } from "../ui/button/IconButton";
 
 interface PostProps {
-  post: PostType
+  post: PostType;
+  className?: string;
 }
 
-const ActivityCard: React.FC<PostProps> = ({ post }) => {
-    const [isLiked, setIsLiked] = useState(post.isLiked || false);
-    const [likesCount, setLikesCount] = useState(post.likes);
-  
-    const handleLike = () => {
-    if (isLiked) {
-      setLikesCount(prev => prev - 1);
-    } else {
-      setLikesCount(prev => prev + 1);
-    }
-    setIsLiked(!isLiked);
-  };
+const ActivityCard: React.FC<PostProps> = ({ post, className }) => {
+  const { isLiked, likesCount, handleLike } = usePostInteraction(post);
 
   return (
     <div className="flex flex-col py-2 rounded-2xl shadow-sm shadow-gray-400 gap-2">
@@ -55,41 +49,36 @@ const ActivityCard: React.FC<PostProps> = ({ post }) => {
       )}
       <div className="border-b border-gray-300" />
 
-      {/* <div className="py-2 mx-12 flex justify-between">
-        <Icons.LIKE size={16}/>
-        <Icons.COMMENT size={16}/>
-        <Icons.REPOST size={16}/>
-        <Icons.SEND size={16}/>
-      </div> */}
-
-      <div className="flex border-t border-gray-100">
-        <button 
+      <div className="flex border-t border-gray-100 justify-between px-4">
+        <Button
+          variant="secondary"
           onClick={handleLike}
-          className={`flex items-center justify-center flex-1 py-2 text-sm font-medium ${
-            isLiked ? 'text-blue-600' : 'text-gray-500 hover:text-gray-700'
-          }`}
+          className={cn(
+            "flex",
+            isLiked && "text-blue-600 hover:text-blue-700"
+          )}
         >
-          <Icons.LIKE  size={18} className={isLiked ? 'fill-blue-600' : ''} />
+          <Icons.LIKE size={18} className={isLiked ? "fill-blue-600" : ""} />
           <span className="ml-2">Like</span>
-        </button>
-        
-        <button className="flex items-center justify-center flex-1 py-2 text-sm font-medium text-gray-500 hover:text-gray-700">
+        </Button>
+
+        <Button variant="secondary" className="flex">
           <Icons.COMMENT size={18} />
           <span className="ml-2">Comment</span>
-        </button>
-        
-        <button className="flex items-center justify-center flex-1 py-2 text-sm font-medium text-gray-500 hover:text-gray-700">
+        </Button>
+
+        <Button variant="secondary" className="flex">
           <Icons.REPOST size={18} />
           <span className="ml-2">Repost</span>
-        </button>
-        
-        <button className="flex items-center justify-center flex-1 py-2 text-sm font-medium text-gray-500 hover:text-gray-700">
+        </Button>
+
+        <Button variant="secondary" className="flex">
           <Icons.SEND size={18} />
           <span className="ml-2">Send</span>
-        </button>
+        </Button>
       </div>
 
-      <div className="flex justify-between mx-8">
+      <div className="flex justify-between mx-8 my-2">
         <div className="flex gap-2">
             <Icons.ACTIVITY />
             <p>{post.impressions}</p>

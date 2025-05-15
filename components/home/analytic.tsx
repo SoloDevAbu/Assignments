@@ -24,16 +24,16 @@ export default function Analytics() {
                 <div className="flex gap-2">
                     <Icons.ACTIVITY />
                     <div className="">
-                        <h3 className="font-semibold text-gray-700">29 profile views</h3>
-                        <p className="text-sm">Discover who's viewed your profile</p>
+                        <h3 className="font-semibold text-gray-700">355 post impressions</h3>
+                        <p className="text-sm">Check out who's engaging with your posts.</p>
                         <p className="text-sm text-gray-500">Past 7 days</p>
                     </div>
                 </div>
                 <div className="flex gap-2">
                     <Icons.SEARCH />
                     <div className="">
-                        <h3 className="font-semibold text-gray-700">29 profile views</h3>
-                        <p className="text-sm">Discover who's viewed your profile</p>
+                        <h3 className="font-semibold text-gray-700">5 search appearance</h3>
+                        <p className="text-sm">See how often you appear in search results.</p>
                     </div>
                 </div>
             </div>
