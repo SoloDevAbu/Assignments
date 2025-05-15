@@ -1,6 +1,11 @@
+'use client';
+
 import note from '@/public/note.png'
+import Link from 'next/link';
+import ShareModal from '@/app/dashboard/share/ShareModal';
 
 export const WeeklySharingCard = () => {
+
     return (
         <div className="flex flex-col items-start gap-4 bg-white px-6 py-4 rounded-xl shadow-sm">
             <div className="flex flex-col gap-2">
@@ -22,7 +27,9 @@ export const WeeklySharingCard = () => {
                 <div className="flex flex-col gap-2 p-2 shadow-sm shadow-gray-300 items-start">
                     <h3 className="text-lg">0 <span className="text-gray-700">Posts</span></h3>
                     <p className="text-xs">Members who post once per week on average see up to 4x more profile views.</p>
-                    <button className="text-blue-600 text-sm font-semibold cursor-pointer hover:underline">Start a post</button>
+                    <Link href='/dashboard/share' scroll={false}>
+                        <button className="text-blue-600 text-sm font-semibold cursor-pointer hover:underline">Start a post</button>
+                    </Link>
                 </div>
                 <div className="flex flex-col gap-2 p-2 shadow-sm shadow-gray-300 items-start">
                     <h3 className="text-lg">0 <span className="text-gray-700">Posts</span></h3>

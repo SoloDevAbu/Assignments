@@ -12,6 +12,11 @@ import { CircleCheckBig } from "lucide-react";
 import { Eye } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import { X } from "lucide-react";
+import { Smile } from "lucide-react";
+import { Video } from "lucide-react";
+import { Image } from "lucide-react";
+import { CalendarDays } from "lucide-react";
+import { Plus } from "lucide-react";
 
 export const Icons = {
     EARTH: Earth,
@@ -27,5 +32,10 @@ export const Icons = {
     CHECKED: CircleCheckBig,
     EYE: Eye,
     ARROW_RIGHT: ArrowRight,
-    CLOSE: X
+    CLOSE: X,
+    EMOJI_SMILE: Smile,
+    VIDEO: Video,
+    IMAGE: Image,
+    CALENDAR: CalendarDays,
+    PLUS: Plus
 }
